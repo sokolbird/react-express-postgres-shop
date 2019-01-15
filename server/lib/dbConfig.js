@@ -1,4 +1,4 @@
-const knex = require('knex')({
+const dbConfig = {
   client: 'postgres',
   debug: true,
   connection: {
@@ -8,9 +8,6 @@ const knex = require('knex')({
     password: '123456',
     database: 'Products',
   },
-});
-const bookshelf = require('bookshelf')(knex);
+};
 
-
-bookshelf.plugin('pagination');
-module.exports = bookshelf;
+module.exports = dbConfig;

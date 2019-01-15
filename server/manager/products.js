@@ -1,15 +1,22 @@
-const productsModel = require("../models/products");
+const productsModel = require('../models/products');
 
-const getProducts = (offset, limit) => {
-  return productsModel.getProducts(offset, limit);
+const getProducts = (offset, limit) => productsModel.getProducts(offset, limit);
+
+const getProductsCount = () => productsModel.getProductsCount();
+
+const getProductById = id => productsModel.getProductById(id);
+
+const addProduct = product => productsModel.addProduct(product);
+
+const deleteProduct = id => productsModel.deleteProduct(id);
+
+const updateProduct = (id, newProduct) => productsModel.updateProduct(id, newProduct);
+
+module.exports = {
+  getProducts,
+  getProductsCount,
+  getProductById,
+  addProduct,
+  deleteProduct,
+  updateProduct,
 };
-
-const getProductsCount = () => {
-  return productsModel.getProductsCount();
-};
-
-const getProductById = id => {
-  return productsModel.getProductById(id);
-};
-
-module.exports = { getProducts, getProductsCount, getProductById };
